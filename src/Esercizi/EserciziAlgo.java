@@ -39,7 +39,7 @@ public class EserciziAlgo {
 			return false;
 		if (a.sin() == null && a.des() == null && a.getVal() < 0)
 			return true;
-		if (a.getVal() < 0)
+		if (a.getVal() > 0)
 			return false;
 		return (verifica2(a.sin()) || verifica2(a.des()));
 	}
