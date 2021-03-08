@@ -7,10 +7,9 @@ import alberi.AlberoBin;
 
 public class algo18 {
     public static boolean verifica(AlberoBin<Integer> a) {
-        if(a == null) return false;
-        if((a.sin() != null) && (a.des() != null))
-            if(a.getVal() > 0)
-                return true;
-        return(verifica(a.sin()) || verifica(a.des()));
+        if (a == null) return false;
+        if (a.sin() != null && a.des() != null)
+            if (a.getVal() > 0) return true;
+        return((verifica(a.sin())) || (verifica(a.des())));
     }
 }
