@@ -8,12 +8,13 @@ Un nodo soddisfa la proprietà A se la somma tra il valore contenuto in esso ed 
 public class lug1414 {
     public static boolean verifica(AlberoBin<Integer> a) {
         if(a == null) return false;
-        return verificaDueNodi(a, 0, 0) >= 2;
+        return ver(a, 0, 0) >= 2;
     }
 
-    public static int verificaDueNodi(AlberoBin<Integer> a, int l, int liv) {
-        if((a.getVal() + l) < 0)
-            return((verificaDueNodi(a.sin(), l + 1, liv + 1)) + (verificaDueNodi(a.des(), l + 1, liv)));
-        return((verificaDueNodi(a.sin(), l + 1, liv + 1)) + (verificaDueNodi(a.des(), l + 1, liv)));
+    public static int ver(AlberoBin<Integer> a, int liv, int k) {
+        if(a == null) return k;
+        if((a.getVal() + liv) < 0)
+            return((ver(a.sin(), liv + 1, k + 1)) + (ver(a.des(), liv + 1, k + 1)));
+        return ((ver(a.sin(), liv + 1, 0)) + (ver(a.des(), liv + 1, 0)));
     }
 }
