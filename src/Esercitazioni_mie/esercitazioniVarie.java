@@ -53,5 +53,42 @@ public class esercitazioniVarie {
         return 0;
     }
 
+    //restituisce true se l'intero x appare almeno 2 volte nell'albero A
+    public static boolean ver2(AlberoBin<Integer> a, int x) {
+        return conta2(a, x) >= 2;
+    }
 
+    public static int conta2(AlberoBin<Integer> a, int x) {
+        if(a == null) return 0;
+        if(a.getVal() == x) 
+            return 1 + conta2(a.sin(), x) + conta2(a.des(), x);
+        return conta2(a.sin(), x) + conta2(a.des(), x);
+    }
+
+    //la somma dei vari nodi del cammino fino al livello p è uguale al valore del di tale livello
+    public static boolean cammino(AlberoBin<Integer> a) {
+        return veri(a, 0, 0);
+    }
+
+    public static boolean veri(AlberoBin<Integer> a, int s, int p) {
+        if(a == null) return false;
+        if(s == p) return true;
+        if(p > 0)
+            return veri(a.sin(), s + a.getVal(), p + 1) || veri(a.des(), s + a.getVal(), p + 1);
+        return false;
+    }
+
+    //AnalizzaNodiFoglia(AlberoBin<Integer>a) ritorna true se e solo se tutti i nodi foglia contengono un dato uguale a quello contenuto nella radice di a
+    public static boolean analizza(AlberoBin<Integer> a) {
+        if(a == null) return false;
+        return nodi(a.sin(), a.getVal()) && nodi(a.des(), a.getVal());
+    }
+
+    public static boolean nodi(AlberoBin<Integer> a, int radice) {
+        if(a == null) return false;
+        if(a.sin() == null && a.des() == null)
+            if(a.sin().getVal() == radice && a.des().getVal() == radice)
+                return true;
+        return nodi(a.sin(), radice) && nodi(a.des(), radice);
+    }
 }
