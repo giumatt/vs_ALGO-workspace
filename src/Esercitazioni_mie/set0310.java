@@ -25,5 +25,12 @@ public class set0310 {
         return 1 + altezzaDes;
     }
 
+/*
+Complessità temporale peggiore O(n^2)
+Complessità temporale migliore O(n)
+
+Complessità spaziale peggiore O(n^2)
+Complessità spaziale migliore O(n)
+*/
 
 }
