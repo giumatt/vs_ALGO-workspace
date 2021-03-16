@@ -1,12 +1,7 @@
 package Esercitazioni_mie;
 
 import java.util.HashSet;
-
 import alberi.AlberoBin;
-import java.util.HashSet;
-
-@SuppressWarnings("unused")
-
 /*Si deve realizzare un metodo ricorivo che riceve un albero binario di interi a e tre interi x, y e k e che ritorna true se e solo se x ed y appaiono
 nell'albero a ed x appare come antenato di y a distanza (in termini di numero di livelli tra x ed y in a) almeno pari a k.*/
 
