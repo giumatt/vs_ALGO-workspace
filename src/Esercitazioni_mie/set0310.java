@@ -12,7 +12,7 @@ public class set0310 {
 
     public static boolean verifica(AlberoBin<Integer> a, int h, int altezza) {
         if(a == null) return false;
-        if((a.sin() == null && a.des() == null) && h = altezza) return a.getVal() >= 0;
+        if((a.sin() == null && a.des() == null) && h == altezza) return a.getVal() >= 0;
         return verifica(a.sin(), h + 1, altezza) || verifica(a.des(), h + 1, altezza);
     }
 
